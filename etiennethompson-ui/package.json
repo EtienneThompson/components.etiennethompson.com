@@ -1,0 +1,64 @@
+{
+  "name": "etiennethompson-ui",
+  "version": "1.0.5",
+  "description": "React component library for the etiennethompson.com ecosystem of applications.",
+  "homepage": "https://github.com/EtienneThompson/components.etiennethompson.com",
+  "bugs": {
+    "url": "https://github.com/EtienneThompson/components.etiennethompson.com/issues",
+    "email": "et@etiennethompson.com"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EtienneThompson/components.etiennethompson.com"
+  },
+  "author": "Etienne Thompson <et@etiennethompson.com> (etiennethompson.com)",
+  "license": "MIT",
+  "private": false,
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "engineStrict": true,
+  "scripts": {
+    "build": "yarn build:clean && yarn build:types && yarn build:js && yarn build:common && yarn copytypes",
+    "build:clean": "rm -rf dist && rm -rf types",
+    "build:types": "tsc",
+    "build:js": "tsc src/index.ts --esModuleInterop --jsx react --outDir dist/esm",
+    "build:common": "tsc src/index.ts --module commonjs --esModuleInterop --jsx react --outDir dist/cjs",
+    "copytypes": "mv types dist/types"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.18.6",
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@types/react": "^18.0.14",
+    "react": "^18.2.0",
+    "react-scripts": "^5.0.1",
+    "typescript": "^4.7.4"
+  }
+}
