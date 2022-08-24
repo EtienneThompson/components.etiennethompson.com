@@ -1,21 +1,13 @@
 import React from "react";
-import logo from "./logo.svg";
+import { Outlet } from "react-router-dom";
 import "./App.css";
-import { Button } from "etiennethompson-ui";
 
 function App() {
+  document.documentElement.className = "theme-light";
+
   return (
     <div className="App">
-      <Button text="test"></Button>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+      <Outlet />
     </div>
   );
 }
