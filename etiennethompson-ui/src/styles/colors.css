@@ -1,0 +1,33 @@
+/*
+ * Default color variables.
+ */
+html {
+    --base: #ffffff;
+    --primary-shadow: #2f4858;
+    --primary: #33658a;
+    --primary-accent: #86bbd8;
+    --secondary: #ee7b30;
+    --invert: #000000;
+    --box-shadow: rgba(0, 0, 0, 0.25);
+}
+
+/*
+ * Light and dark theme color variables.
+ */
+.theme-light {
+    --base: #ffffff;
+    --primary-shadow: #2f4858;
+    --primary: #33658a;
+    --primary-accent: #86bbd8;
+    --secondary: #ee7b30;
+    --invert: #000000;
+    --box-shadow: rgba(0, 0, 0, 0.25);
+}
+
+.theme-dark {
+    --base: #252525;
+    --primary: #2f4858;
+    --secondary: #ee7b30;
+    --invert: #ffffff;
+    --box-shadow: rgba(255, 255, 255, 0.25);
+}

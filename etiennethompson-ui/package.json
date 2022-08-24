@@ -25,12 +25,13 @@
   },
   "engineStrict": true,
   "scripts": {
-    "build": "yarn build:clean && yarn build:types && yarn build:js && yarn build:common && yarn copytypes",
+    "build": "yarn build:clean && yarn build:types && yarn build:js && yarn build:common && yarn copy:types && yarn copy:styles",
     "build:clean": "rm -rf dist && rm -rf types",
     "build:types": "tsc",
     "build:js": "tsc src/index.ts --esModuleInterop --jsx react --outDir dist/esm",
     "build:common": "tsc src/index.ts --module commonjs --esModuleInterop --jsx react --outDir dist/cjs",
-    "copytypes": "mv types dist/types"
+    "copy:types": "mv types dist/types",
+    "copy:styles": "cp -r src/styles dist/cjs && cp -r src/styles dist/esm"
   },
   "eslintConfig": {
     "extends": [
