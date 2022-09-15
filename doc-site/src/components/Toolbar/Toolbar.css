@@ -1,0 +1,11 @@
+.toolbar-container {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    box-shadow: 0px 1px 4px 4px rgba(0, 0, 0, 0.2);
+    background-color: #33658a;
+    padding: 0px 10px;
+}
