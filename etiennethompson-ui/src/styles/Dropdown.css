@@ -1,0 +1,39 @@
+/*
+Remove the default select styling.
+*/
+.et-dropdown select {
+    appearance: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+Apply custom styling to containing div.
+*/
+.et-dropdown {
+    display: grid;
+    grid-template-areas: "select";
+    align-items: center;
+    min-width: 10ch;
+    font-size: 1.25em;
+    cursor: pointer;
+}
+
+.et-dropdown select, .et-dropdown:after {
+    grid-area: select;
+}
+
+.et-dropdown:after {
+    justify-self: end;
+}
+
+.et-dropdown::after {
+    content: "";
+    width: 0.8em;
+    height: 0.5em;
+    background-color: #777;
+    clip-path: polygon(100% 0%, 0% 0%, 50% 100%);
+}

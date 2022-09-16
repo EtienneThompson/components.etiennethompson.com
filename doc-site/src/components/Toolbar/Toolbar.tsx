@@ -1,4 +1,4 @@
-import { Button, ButtonVariants } from "etiennethompson-ui";
+import { Button, ButtonVariants, Dropdown } from "etiennethompson-ui";
 import { useNavigate } from "react-router";
 import React from "react";
 import "./Toolbar.css";
@@ -11,8 +11,11 @@ export const Toolbar = () => {
       <h3 style={{ cursor: "pointer" }} onClick={() => navigate("")}>
         Component Library
       </h3>
-      <Button variant={ButtonVariants.Text} onClick={() => navigate("components/button")}>
-        Button
+      <Button variant={ButtonVariants.Text}>
+        <Dropdown>
+          <option onClick={() => navigate("components/button")}>Button</option>
+          <option onClick={() => navigate("components/dropdown")}>Dropdown</option>
+        </Dropdown>
       </Button>
     </div>
   );
