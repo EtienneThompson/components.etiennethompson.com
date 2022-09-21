@@ -8,6 +8,10 @@ Remove the default select styling.
     background-color: transparent;
     margin: 0;
     padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
 }
 
 /*
@@ -19,6 +23,8 @@ Apply custom styling to containing div.
     align-items: center;
     min-width: 10ch;
     font-size: 1.25em;
+    padding: 0.25em 0.5em;
+    line-height: 1.1;
     cursor: pointer;
 }
 
@@ -36,4 +42,18 @@ Apply custom styling to containing div.
     height: 0.5em;
     background-color: #777;
     clip-path: polygon(100% 0%, 0% 0%, 50% 100%);
+}
+
+.et-dropdown-outlined {
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+}
+
+.et-dropdown-filled {
+    background-color: var(--primary);
+    border-radius: 5px;
+}
+
+.et-dropdown-filled select {
+    color: #ffffff;
 }
