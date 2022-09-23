@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, ButtonCorners, ButtonSize, ButtonVariants } from "etiennethompson-ui";
 import "./ButtonPage.scss";
-import { Code, Prop, Tag } from "../../components/Code";
+import { Code, Prop, Tag } from "../../../components/Code";
 
 export const ButtonPage = () => {
   return (

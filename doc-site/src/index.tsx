@@ -4,7 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 import { LandingPage } from "./pages/LandingPage";
-import { ButtonPage } from "./pages/Button";
+import { ButtonPage } from "./pages/components/Button";
+import { DropdownPage } from "./pages/components/Dropdown";
 import "./index.scss";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
@@ -15,6 +16,7 @@ root.render(
         <Route path="" element={<LandingPage />} />
         <Route path="components/">
           <Route path="button" element={<ButtonPage />} />
+          <Route path="dropdown" element={<DropdownPage />} />
         </Route>
       </Route>
     </Routes>
