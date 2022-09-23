@@ -1,6 +1,6 @@
 import React from "react";
 import { Dropdown } from "etiennethompson-ui";
-import { Code, Tag, Prop, InnerText } from "../../../components/Code";
+import { Code, Tag, Prop } from "../../../components/Code";
 import "./DropdownPage.scss";
 
 export const DropdownPage = () => {
