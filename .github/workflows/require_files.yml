@@ -12,5 +12,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: Check required files
         run: |
-          CHANGED_FILES=$(git diff --name-only master)
+          CHANGED_FILES=$(git diff --name-only)
           echo $CHANGED_FILES

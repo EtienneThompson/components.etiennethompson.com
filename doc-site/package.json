@@ -12,7 +12,7 @@
     "@types/react-dom": "^18.0.6",
     "@types/react-router": "^5.1.18",
     "@types/react-router-dom": "^5.3.3",
-    "etiennethompson-ui": "link:../etiennethompson-ui",
+    "etiennethompson-ui": "^1.0.0",
     "node-sass": "^7.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
