@@ -5,5 +5,5 @@
     padding: 2px;
     font-size: 105%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }

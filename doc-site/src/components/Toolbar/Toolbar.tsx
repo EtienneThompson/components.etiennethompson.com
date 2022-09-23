@@ -8,7 +8,7 @@ export const Toolbar = () => {
 
   return (
     <div className="toolbar-container">
-      <h3 style={{ cursor: "pointer" }} onClick={() => navigate("")}>
+      <h3 style={{ cursor: "pointer", margin: "0 10px" }} onClick={() => navigate("")}>
         Component Library
       </h3>
       <Button variant={ButtonVariants.Text}>

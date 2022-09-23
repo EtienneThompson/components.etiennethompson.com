@@ -40,7 +40,7 @@ Apply custom styling to containing div.
     content: "";
     width: 0.8em;
     height: 0.5em;
-    background-color: #777;
+    background-color: #000000;
     clip-path: polygon(100% 0%, 0% 0%, 50% 100%);
 }
 
@@ -56,4 +56,8 @@ Apply custom styling to containing div.
 
 .et-dropdown-filled select {
     color: #ffffff;
+}
+
+.et-dropdown-filled::after {
+    background-color: #ffffff;
 }
