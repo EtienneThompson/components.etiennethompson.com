@@ -55,5 +55,9 @@ jobs:
             exit 1
           fi
 
+          if [ ! $VER2 > $VER1 ]; then
+            exit 1
+          fi
+
           echo $VER1
           echo $VER2
