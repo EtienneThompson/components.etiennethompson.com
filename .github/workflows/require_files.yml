@@ -32,6 +32,8 @@ jobs:
           CHANGED_LINES=$(git diff --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} etiennethompson-ui/package.json)
           echo $CHANGED_LINES
 
-          VERSION_REGEX='"version": "[0-9]+\.[0-9]+\.[0-9]+"'
-          VERSIONS=$(grep -o $VERSION_REGEX <<< $CHANGED_LINES)
-          echo $VERSIONS
+          VERSION_REGEX='"version": "([0-9]+\.[0-9]+\.[0-9]+)"'
+          if [[ $CHANGED_LINES =~ $VERSION_REGEX ]]; then
+            echo ${BASH_REMATCH[1]}
+            echo ${BASH_REMATCH[2]}
+          fi
