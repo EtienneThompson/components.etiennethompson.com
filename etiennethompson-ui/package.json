@@ -1,7 +1,7 @@
 {
   "name": "etiennethompson-ui",
   "version": "1.0.5",
-  "description": "React component library for the etiennethompson.com ecosystem of applications. test",
+  "description": "React component library for the etiennethompson.com ecosystem of applications.",
   "homepage": "https://github.com/EtienneThompson/components.etiennethompson.com",
   "bugs": {
     "url": "https://github.com/EtienneThompson/components.etiennethompson.com/issues",
