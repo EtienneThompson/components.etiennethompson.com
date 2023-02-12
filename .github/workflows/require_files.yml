@@ -57,6 +57,6 @@ jobs:
           echo $VER2
 
           if [ ! $VER2 > $VER1 ]; then
-          echo "The version you updated to wasn't bigger than the previous version."
+            echo "The version you updated to wasn't bigger than the previous version."
             exit 1
           fi
