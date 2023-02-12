@@ -3,6 +3,7 @@ import { DropdownProps } from "./Dropdown.types";
 import "../../styles/Dropdown.css";
 
 export const Dropdown: React.FunctionComponent<DropdownProps> = (props: DropdownProps) => {
+  console.log("delete me");
   const getClassName = () => {
     let className: string = "et-dropdown";
 
