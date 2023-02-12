@@ -33,5 +33,5 @@ jobs:
           echo $CHANGED_LINES
 
           VERSION_REGEX='"version": "([0-9]+\.[0-9]+\.[0-9]+)"'
-          VERSIONS=$(echo $CHANGED_LINES | egrep -Po "\"version\": \"([0-9]+\.[0-9]+\.[0-9]+)\""
+          VERSIONS=$(echo $CHANGED_LINES | grep -o "\"version\": \"([0-9]+\.[0-9]+\.[0-9]+)\""
           echo $VERSIONS
