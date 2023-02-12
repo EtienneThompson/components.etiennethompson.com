@@ -16,3 +16,5 @@ jobs:
         run: |
           CHANGED_FILES=$(git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }})
           echo $CHANGED_FILES
+          IFS=' ' read -r -a array <<< "$CHANGED_FILES"
+          echo "${array[@]}"
