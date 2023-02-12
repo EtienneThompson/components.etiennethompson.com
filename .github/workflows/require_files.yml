@@ -18,11 +18,13 @@ jobs:
           echo $CHANGED_FILES
 
           if ! grep -q "etiennethompson-ui" <<< $CHANGED_FILES; then
+            echo "No etiennethompson-ui changes."
             exit 0;
           fi
 
           if grep -q "etiennethompson-ui" <<< $CHANGED_FILES; then
             if ! grep -q "etiennethompson-ui/package.json" <<< $CHANGED_FILES;
+              echo "etiennethompson-ui changed without package.json version update."
               exit 1;
             fi
           fi
