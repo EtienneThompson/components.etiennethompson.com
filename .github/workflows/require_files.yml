@@ -16,8 +16,16 @@ jobs:
         run: |
           CHANGED_FILES=$(git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }})
           echo $CHANGED_FILES
-          IFS='\n' read -r -a array <<< "$CHANGED_FILES"
-          for element in "${array[@]}"
-          do
-            echo "$element"
-          done
+
+          if ! grep -q "etiennethompson-ui" <<< $CHANGED_FILES; then
+            exit 0;
+          fi
+
+          if grep -q "etiennethompson-ui" <<< $CHANGED_FILES; then
+            if ! grep -q "etiennethompson-ui/package.json" <<< $CHANGED_FILES;
+              exit 1;
+            fi
+          fi
+
+          $CHANGED_LINES=$(git diff --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} etiennethompson-ui/package.json)
+          echo $CHANGED_LINES
