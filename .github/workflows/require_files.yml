@@ -1,0 +1,63 @@
+name: Check required files
+
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  check_files:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Check required files
+        run: |
+          echo "Checking required files..."
+          echo "[0] etiennethompson-ui/package.json"
+          CHANGED_FILES=$(git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }})
+
+          if ! grep -q "etiennethompson-ui" <<< $CHANGED_FILES; then
+            echo "No etiennethompson-ui changes. Skipping."
+            exit 0
+          fi
+
+          if grep -q "etiennethompson-ui" <<< $CHANGED_FILES; then
+            if ! grep -q "etiennethompson-ui/package.json" <<< $CHANGED_FILES; then
+              echo "etiennethompson-ui changed without package.json version update."
+              exit 1
+            fi
+          fi
+
+          CHANGED_LINES=$(git diff --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} etiennethompson-ui/package.json)
+
+          VERSION_REGEX='"version": "([0-9]+\.[0-9]+\.[0-9]+)"'
+          VERSIONS=$(echo $CHANGED_LINES | grep -Po "$VERSION_REGEX")
+
+          FOUND=0
+          VER1=""
+          VER2=""
+          for match in ${VERSIONS[@]}; do
+            if [ ! $match = "\"version\":" ]; then
+              FOUND=$(( FOUND + 1 ))
+              
+              if [ "$VER1" = "" ]; then
+                VER1=$match
+              else
+                VER2=$match
+              fi
+            fi
+          done
+
+          if [ ! $FOUND = 2 ]; then
+            echo "There weren't 2 versions found in the diff of package.json. Did you update the version number?"
+            exit 1
+          fi
+
+          if [ ! $VER2 \> $VER1 ]; then
+            echo "The version you updated to wasn't bigger than the previous version."
+            exit 1
+          fi
+
+          echo "Required files verified successfully."
