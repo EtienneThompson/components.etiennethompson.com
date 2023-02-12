@@ -38,7 +38,7 @@ jobs:
 
           FOUND=0
           for match in ${VERSIONS[@]}; do
-            FOUND = FOUND + 1
+            FOUND=$(( FOUND + 1 ))
             echo $match
           done
 
