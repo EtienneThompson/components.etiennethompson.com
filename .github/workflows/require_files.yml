@@ -37,11 +37,23 @@ jobs:
           echo $VERSIONS
 
           FOUND=0
+          VER1=""
+          VER2=""
           for match in ${VERSIONS[@]}; do
             if [ ! $match = "\"version\":" ]; then
               FOUND=$(( FOUND + 1 ))
-              echo $match
+              
+              if [ $VER1 = "" ]; then
+                VER1=$match
+              else
+                VER2=$match
+              fi
             fi
           done
 
-          echo $FOUND
+          if [ ! $FOUND = 2 ]; then
+            exit 1
+          fi
+
+          echo $VER1
+          echo $VER2
