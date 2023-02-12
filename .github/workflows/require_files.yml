@@ -36,4 +36,10 @@ jobs:
           VERSIONS=$(echo $CHANGED_LINES | grep -Po "$VERSION_REGEX")
           echo $VERSIONS
 
-          echo ${#VERSIONS[@]}
+          FOUND=0
+          for match in ${VERSIONS[@]}; do
+            FOUND = FOUND + 1
+            echo $match
+          done
+
+          echo $FOUND
