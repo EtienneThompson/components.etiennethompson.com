@@ -29,5 +29,5 @@ jobs:
             fi
           fi
 
-          $CHANGED_LINES=$(git diff --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} etiennethompson-ui/package.json)
+          CHANGED_LINES=$(git diff --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} etiennethompson-ui/package.json)
           echo $CHANGED_LINES
