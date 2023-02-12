@@ -43,7 +43,7 @@ jobs:
             if [ ! $match = "\"version\":" ]; then
               FOUND=$(( FOUND + 1 ))
               
-              if [ $VER1 = "" ]; then
+              if [ "$VER1" = "" ]; then
                 VER1=$match
               else
                 VER2=$match
