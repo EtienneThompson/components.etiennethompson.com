@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Check required files
         run: |
-          BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
+          BRANCH_NAME=$(git branch --show-current)
           echo $BRANCH_NAME
           CHANGED_FILES=$(git diff --name-only master...$BRANCH_NAME)
           echo $CHANGED_FILES
