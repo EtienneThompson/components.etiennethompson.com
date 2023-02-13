@@ -11,10 +11,11 @@ export const Toolbar = () => {
       <h3 style={{ cursor: "pointer", margin: "0 10px" }} onClick={() => navigate("")}>
         Component Library
       </h3>
-      <Button variant={ButtonVariants.Text}>
+      <Button className="dropdown-button" variant={ButtonVariants.Text}>
         <Dropdown>
           <option onClick={() => navigate("components/button")}>Button</option>
           <option onClick={() => navigate("components/dropdown")}>Dropdown</option>
+          <option onClick={() => navigate("components/loading-spinner")}>Loading Spinner</option>
         </Dropdown>
       </Button>
     </div>

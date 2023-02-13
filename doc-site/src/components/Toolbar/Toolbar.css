@@ -9,3 +9,7 @@
     background-color: #33658a;
     padding: 0px 10px;
 }
+
+.dropdown-button {
+    min-width: 250px;
+}
