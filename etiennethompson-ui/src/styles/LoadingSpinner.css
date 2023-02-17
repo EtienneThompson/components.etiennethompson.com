@@ -1,0 +1,45 @@
+@import "./colors.css";
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes slow-spinner {
+    0% {
+        transform: rotate(45deg);
+    }
+    40% {
+        transform: rotate(315deg);
+    }
+    70% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(405deg);
+    }
+}
+
+.et-loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #cfd0d1;
+    border-top-color: var(--secondary);
+    border-radius: 50%;
+    animation: slow-spinner 1s linear infinite;
+}
+
+.et-double-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--base);
+    border-top-color: var(--secondary);
+    border-bottom-color: var(--secondary);
+    border-radius: 50%;
+    animation: spinner 1.5s linear infinite;
+}
+

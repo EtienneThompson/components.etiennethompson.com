@@ -6,6 +6,7 @@ import App from "./App";
 import { LandingPage } from "./pages/LandingPage";
 import { ButtonPage } from "./pages/components/Button";
 import { DropdownPage } from "./pages/components/Dropdown";
+import { LoadingSpinnerPage } from "./pages/components/LoadingSpinner";
 import "./index.scss";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
@@ -17,6 +18,7 @@ root.render(
         <Route path="components/">
           <Route path="button" element={<ButtonPage />} />
           <Route path="dropdown" element={<DropdownPage />} />
+          <Route path="loading-spinner" element={<LoadingSpinnerPage />} />
         </Route>
       </Route>
     </Routes>
