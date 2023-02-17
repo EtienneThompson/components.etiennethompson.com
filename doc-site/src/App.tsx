@@ -10,7 +10,9 @@ function App() {
     <div className="App">
       <Toolbar />
       <div style={{ marginTop: "50px" }}></div>
-      <Outlet />
+      <div style={{ margin: "0 10px" }}>
+        <Outlet />
+      </div>
     </div>
   );
 }

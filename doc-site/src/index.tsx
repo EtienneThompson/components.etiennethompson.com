@@ -6,7 +6,7 @@ import App from "./App";
 import { LandingPage } from "./pages/LandingPage";
 import { ButtonPage } from "./pages/components/Button";
 import { DropdownPage } from "./pages/components/Dropdown";
-import { LoadingSpinnerPage } from "./pages/components/LoadingSpinner/LoadingSpinnerPage";
+import { LoadingSpinnerPage } from "./pages/components/LoadingSpinner";
 import "./index.scss";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
